@@ -1,5 +1,5 @@
 // 記事（PDFなど）を読み込んで表示する関数
-function loadArticles() {
+function loadarticles() {
     const container = document.getElementById('pdf-container');
     
     if (!container) {
@@ -38,8 +38,8 @@ function createPDFCard(article, index) {
     card.className = 'pdf-card';
     
     // 'file' プロパティには 'report.pdf' のようなファイル名が入ることを想定
-    // 'Article/' フォルダを基準のパスとして追加します
-    const fileName = `Article/${article.file}`; 
+    // 'article/' フォルダを基準のパスとして追加します
+    const fileName = `article/${article.file}`; 
     
     const displayName = article.name || article.title || '無題の資料';
     const description = article.description || '';
@@ -91,5 +91,5 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // ページ読み込み時に記事を読み込む
 document.addEventListener('DOMContentLoaded', () => {
-    loadArticles();
+    loadarticles();
 });
